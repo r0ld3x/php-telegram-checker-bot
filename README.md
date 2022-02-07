@@ -56,6 +56,20 @@ CREATE TABLE persons (
 
 - [@r0ld3x](https://www.github.com/r0ld3x)
 
+## Support Me
+**<a href="https://www.buymeacoffee.com/r0ld3x" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>**
+
+**UPI**: <code>roldex.fam@idfcbank</code> <br>
+**Paypal**: <a href="https://paypal.me/r0ld3x">Click</a> <br>
+**BTC**: <code>35t9HaAV35HbkjZXtbZ66fdo3LLMp79CyD</code> <br>
+**ETH**: <code>0x70550046d712c677d70cB6eEb247F72A5b8fD844</code> <br>
+
+
+## Where You Can Find Me
+- <a href="https://t.me/r0ld3x" target = "_blank"><img height="20"  alt="Roldex's Telegram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/telegram.svg"></img> Telegram</a><br>
+- <a href="https://instagram.com/r0ld3x" target = "_blank"><img height="20"  alt="Roldex's Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg"></img> Instagram</a> <br>
+- <a href="https://github.com/r0ld3x" target = "_blank"><img height="20"  alt="Roldex's Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg"></img> Github</a> <br>
+- <a href="https://www.youtube.com/channel/UC8FCA9c4r_IKbVTRBbedTuQ" target = "_blank"><img  alt="Roldex's Youtube" width="22px" height="20" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg"></img> Youtube</a> <br>
 
 ## Made With 
 - [PHP](https://www.php.net/)
