@@ -15,7 +15,7 @@ A Card Checker Bot For Telegram Based On Telegram.
 - open XAMPP as administrator
 - start Apache, Mysql
 - Click On Mysql-Admin (phpmyadmin will open in your browser.)
-- now make a database with name test
+- now make a database with name `test`
 > Paste
 ```
 CREATE TABLE persons (
