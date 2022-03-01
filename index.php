@@ -885,8 +885,8 @@ function checkrole($chatId,$message_id,$keyboard,$nopre,$gId){
     }
     $final2 = json_encode($json_array);
     $credits = trim(strip_tags(getStr($final2, '"credits":"','"')));
-mysqli_close($link);
-$link = mysqli_connect("localhost", "root", "", "demo");
+    mysqli_close($link);
+    $link = mysqli_connect("localhost", "root", "", "demo");
     $sql = "SELECT role FROM persons WHERE userid='$gId'";
     $result20 = mysqli_query($link, $sql);
     $json_array = [];
@@ -895,61 +895,59 @@ $link = mysqli_connect("localhost", "root", "", "demo");
     }
     $final201 = json_encode($json_array);
     $role = trim(strip_tags(getStr($final201, '"role":"','"')));
-mysqli_close($link);
-if($role == 'MEMBER' and $credits < 5){
-$link = mysqli_connect("localhost", "root", "", "demo");
-$sql = "UPDATE persons SET role = 'USER' WHERE persons.userid='$gId'";
-$result = mysqli_query($link, $sql);
-$json_array = [];
-while ($row = mysqli_fetch_assoc($result)) {
-  $json_array[] = $row;
-}
-$final = json_encode($json_array);
-    $result = "<i>SORRY TO SAY THAT</i>\n <b> YOU HAVE BEEN DEMOTED TO FREE USER BECAUSE YOU DONT HAVE CREDITS NOW \n YOU CAN BUY CREDITS NOW BY HITTING /buy </b>";
-  reply_to($chatId,$message_id,$keyboard,$result);
-}elseif(empty($credits)){
-$link = mysqli_connect("localhost", "root", "", "demo");
-$sql = "INSERT INTO persons (userid, role, username, credits) VALUES ('$userId', 'USER', '$username', '01')";
-    $result = "<i>User Created Successfully</i>";
-  reply_to($chatId,$message_id,$keyboard,$result);
-}
+    mysqli_close($link);
+    if($role == 'MEMBER' and $credits < 5){
+        $link = mysqli_connect("localhost", "root", "", "demo");
+        $sql = "UPDATE persons SET role = 'USER' WHERE persons.userid='$gId'";
+        $result = mysqli_query($link, $sql);
+        $json_array = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+        $json_array[] = $row;
+        $final = json_encode($json_array);
+            $result = "<i>SORRY TO SAY THAT</i>\n <b> YOU HAVE BEEN DEMOTED TO FREE USER BECAUSE YOU DONT HAVE CREDITS NOW \n YOU CAN BUY CREDITS NOW BY HITTING /buy </b>";
+        reply_to($chatId,$message_id,$keyboard,$result);
+        }elseif(empty($credits)){
+        $link = mysqli_connect("localhost", "root", "", "demo");
+        $sql = "INSERT INTO persons (userid, role, username, credits) VALUES ('$userId', 'USER', '$username', '01')";
+            $result = "<i>User Created Successfully</i>";
+        reply_to($chatId,$message_id,$keyboard,$result);
+        }
+    }
 // $premiumgp = (array("-1001320804136","-1001552296979","-1001300027599","-1001298504199","-1001434792768","-1001478277738","-1001350709511","-1001348664765","-1001325488699"));
-    $che = bannedbin($bin);
-	$user = file_get_contents('users.txt');
-        $members = explode("\n", $user);
-        if (!in_array($gId, $members)) {
-            $add_user = file_get_contents('users.txt');
-            $add_user .= $gId . "\n";
-            file_put_contents('users.txt', $add_user);
-        //
-         }
-$freeuser = urlencode("<b>HEY You dont have permission to use me here 
-<i> take premium access to use here</i></b>");
-$freeuser1 = urlencode("<b>HEY You dont have permission to use me here 
-<i>take group access from <code>@r0ld3x</code> to use here</i></b>");
- 
-$link = mysqli_connect("localhost", "root", "", "demo");
-$sql = "SELECT role FROM persons WHERE userid='$gId'";
-$result20 = mysqli_query($link, $sql);
-$json_array = [];
-while ($row = mysqli_fetch_assoc($result20)){
-  $json_array[] = $row;}
-$final201 = json_encode($json_array);
-$role = trim(strip_tags(getStr($final201, '"role":"','"')));
-mysqli_close($link);
-$noregister = urlencode ("<b>[ALERT] YOU DON'T REGISTERED YOURSELF. PLEASE REGISTER YOURSELF FIRST TO USE ME 
-•• USE /register TO REGISTER ME</b>");
-if($chatId == $gId and $role == 'USER'){
-reply_to($chatId,$message_id,$keyboard,$freeuser);
-exit();
-}elseif($chatId != $gId and $che == false){
-reply_to($chatId,$message_id,$keyboard,$freeuser1);
-exit();
-}elseif(empty($role)){
-reply_to($chatId,$message_id,$keyboard,$noregister);
- exit();
-}}
+    // $che = bannedbin($bin);
+	// $user = file_get_contents('users.txt');
+    //     $members = explode("\n", $user);
+    //     if (!in_array($gId, $members)) {
+    //         $add_user = file_get_contents('users.txt');
+    //         $add_user .= $gId . "\n";
+    //         file_put_contents('users.txt', $add_user);
+    //     //
+    //      }
+    $freeuser = urlencode("<b>HEY You dont have permission to use me here 
+    <i> take premium access to use here</i></b>");
+    $freeuser1 = urlencode("<b>HEY You dont have permission to use me here 
+    <i>take group access from <code>@r0ld3x</code> to use here</i></b>");
+    $link = mysqli_connect("localhost", "root", "", "demo");
+    $sql = "SELECT role FROM persons WHERE userid='$gId'";
+    $result20 = mysqli_query($link, $sql);
+    $json_array = [];
+    while ($row = mysqli_fetch_assoc($result20)){
+    $json_array[] = $row;}
+    $final201 = json_encode($json_array);
+    $role = trim(strip_tags(getStr($final201, '"role":"','"')));
+    mysqli_close($link);
+    // $noregister = urlencode ("<b>[ALERT] YOU DON'T REGISTERED YOURSELF. PLEASE REGISTER YOURSELF FIRST TO USE ME •• USE /register TO REGISTER ME</b>");
+    if($chatId == $gId and $role == 'USER'){
+        reply_to($chatId,$message_id,$keyboard,$freeuser);
+        exit();
+    }elseif(empty($role)){
+        $sql = "INSERT INTO persons (userid, role, username, credits) VALUES ('$userId', 'USER', '$username', '01')";
+            $result = "<i>User Created Successfully</i>";
+        reply_to($chatId,$message_id,$keyboard,$result);
+        exit();
+    }
+}
 // flush();
- ob_flush();
+ob_flush();
 
 ?>   
