@@ -1,7 +1,7 @@
 <?php
 if(strpos($message, "/mass")===0 or strpos($message, "!mass")===0 or strpos($message, ".mass")===0){
     $keyboard = [
-    'inline_keyboard' => [[['text' => 'Features', 'callback_data' => 'paid'], ['text' => 'Buy', 'callback_data' => 'buy'], ['text' => 'Buy Now', 'url' => 'https://t.me/r0ld3x'],]]];
+    'inline_keyboard' => [[['text' => 'Features', 'callback_data' => 'paid'], ['text' => 'Buy', 'callback_data' => 'buy'], ['text' => 'Buy Now', 'url' => 'https://t.me/ANDREAYT02'],]]];
 $keyboard = json_encode($keyboard);
 checkrole($chatId,$message_id,$keyboard,$nopre,$gId);
  sendaction($chatId, typing);
@@ -132,7 +132,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, 'data='.$cc.'%7C'.$mes.'%7C'.$ano.'%7C'.$cv
 $response = curl_exec($ch);
 $ccresult = trim(strip_tags(GetStr($response, '"msg":"','|')));
   global $mes_id, $chatId , $fullmes;
-  $fullmes = ''.$fullmes.'<code>'.$lista.''.'%0A'.$ccresult.'|@RoldexVerseBot</code>%0A';
+  $fullmes = ''.$fullmes.'<code>'.$lista.''.'%0A'.$ccresult.'|@ANDREACHKBOT</code>%0A';
   editMessage($chatId,$fullmes,$mes_id);
   echo $fullmes.'<br>';
   return $ccresult;
